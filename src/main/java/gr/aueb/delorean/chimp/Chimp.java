@@ -81,8 +81,8 @@ public class Chimp {
      * Closes the block and writes the remaining stuff to the BitOutput.
      */
     public void close() {
-    	addValue(Double.NaN);
-    	out.writeBit(false);
+    	addValue(Double.NaN); // TODO why
+    	out.writeBit(false); // TODO why
         out.flush();
     }
 
@@ -93,7 +93,7 @@ public class Chimp {
         	out.writeBit(false);
         	out.writeBit(false);
             size += 2;
-            storedLeadingZeros = 65;
+            storedLeadingZeros = 65; // TODO 为什么这里要改
         } else {
             int leadingZeros = leadingRound[Long.numberOfLeadingZeros(xor)];
             int trailingZeros = Long.numberOfTrailingZeros(xor);
@@ -106,12 +106,12 @@ public class Chimp {
                 out.writeInt(significantBits, 6);
                 out.writeLong(xor >>> trailingZeros, significantBits); // Store the meaningful bits of XOR
                 size += 11 + significantBits;
-    			storedLeadingZeros = 65;
+    			storedLeadingZeros = 65; // TODO 为什么这里要改
     		} else if (leadingZeros == storedLeadingZeros) {
     			out.writeBit(true);
     			out.writeBit(false);
     			int significantBits = 64 - leadingZeros;
-    			out.writeLong(xor, significantBits);
+    			out.writeLong(xor, significantBits); // TODO non-lead bits，writeLong从the most significant bits开始写，那还对吗？
     			size += 2 + significantBits;
     		} else {
     			storedLeadingZeros = leadingZeros;
@@ -119,7 +119,7 @@ public class Chimp {
     			out.writeBit(true);
     			out.writeBit(true);
     			out.writeInt(leadingRepresentation[leadingZeros], 3);
-    			out.writeLong(xor, significantBits);
+    			out.writeLong(xor, significantBits); // TODO non-lead bits，writeLong从the most significant bits开始写，那还对吗？
     			size += 5 + significantBits;
     		}
     	}

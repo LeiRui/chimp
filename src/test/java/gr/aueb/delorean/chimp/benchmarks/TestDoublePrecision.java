@@ -137,7 +137,7 @@ public class TestDoublePrecision {
                 for (double value : values) {
                     compressor.addValue(value);
                 }
-                compressor.close();
+                compressor.close(); // TODO 从比特流到字节数组
                 encodingDuration += System.nanoTime() - start;
                 totalSize += compressor.getSize();
                 totalBlocks += 1;

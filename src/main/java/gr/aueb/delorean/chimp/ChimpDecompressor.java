@@ -50,7 +50,7 @@ public class ChimpDecompressor {
         if(endOfStream) {
             return null;
         }
-        return Double.longBitsToDouble(storedVal);
+        return Double.longBitsToDouble(storedVal); // TODO why double2LongRawBits and vice
     }
 
     private void next() throws IOException {
@@ -72,7 +72,7 @@ public class ChimpDecompressor {
     	int significantBits;
     	long value;
         // Read value
-    	int flag = in.readInt(2);
+    	int flag = in.readInt(2); // TODO cool! clear! flag bits
     	switch(flag) {
     	case 3:
             // New leading zeros
@@ -82,7 +82,7 @@ public class ChimpDecompressor {
                 significantBits = 64;
             }
             value = in.readLong(64 - storedLeadingZeros);
-            value = storedVal ^ value;
+            value = storedVal ^ value; // TODO cool! here restore XOR
             if (value == NAN_LONG) {
             	endOfStream = true;
             	return;
