@@ -40,7 +40,31 @@ public class TestDoublePrecision {
 //	        "/city_temperature.csv.gz", // NOTE VALUE_POSITION = 2
 //	        "/Stocks-Germany-sample.txt.gz", // NOTE VALUE_POSITION = 2
 //	        "/SSD_HDD_benchmarks.csv.gz" // NOTE VALUE_POSITION = 2
-            "/ZT17.csv.gz" // TODO NOTE VALUE_POSITION = 1
+            "/ZT17.csv.gz", // TODO NOTE VALUE_POSITION = 1
+            "/ZT21.csv.gz",
+            "/ZT22.csv.gz",
+            "/ZT763.csv.gz",
+            "/ZT764.csv.gz",
+            "/ZT765.csv.gz",
+            "/ZT766.csv.gz",
+            "/ZT1103.csv.gz",
+            "/ZT11440.csv.gz",
+            "/ZT11480.csv.gz",
+            "/ZT11529.csv.gz",
+            "/ZT11531.csv.gz",
+            "/ZT11581.csv.gz",
+            "/ZT11621.csv.gz",
+            "/ZT11627.csv.gz",
+            "/ZT11629.csv.gz",
+            "/ZT11676.csv.gz",
+            "/ZT11725.csv.gz",
+            "/ZT11727.csv.gz",
+            "/ZT11728.csv.gz",
+            "/ZT11729.csv.gz",
+            "/ZT11730.csv.gz",
+            "/ZT11731.csv.gz",
+            "/ZT11732.csv.gz",
+
     };
 
     @Test

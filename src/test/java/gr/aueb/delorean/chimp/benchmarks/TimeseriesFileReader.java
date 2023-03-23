@@ -14,7 +14,7 @@ public class TimeseriesFileReader {
 		private static final String DELIMITER = ",";
 
 //	private static final int VALUE_POSITION = 2;
-		private static final int VALUE_POSITION = 0; // TODO ZC DATA
+		private static final int VALUE_POSITION = 1; // TODO ZC DATA
 
 		BufferedReader bufferedReader;
 		private int blocksize;
