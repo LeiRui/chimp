@@ -12,7 +12,10 @@ import java.util.zip.GZIPInputStream;
 public class TimeseriesFileReader {
 		public static final int DEFAULT_BLOCK_SIZE = 1_000;
 		private static final String DELIMITER = ",";
-		private static final int VALUE_POSITION = 2;
+
+//	private static final int VALUE_POSITION = 2;
+		private static final int VALUE_POSITION = 0; // TODO ZC DATA
+
 		BufferedReader bufferedReader;
 		private int blocksize;
 
@@ -25,6 +28,7 @@ public class TimeseriesFileReader {
 			Reader decoder = new InputStreamReader(gzipStream, "UTF-8");
 			this.bufferedReader = new BufferedReader(decoder);
 			this.blocksize = blocksize;
+//			bufferedReader.readLine(); // TODO: skip possible header
 		}
 
 		public double[] nextBlock() {
